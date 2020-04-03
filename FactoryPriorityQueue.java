@@ -1,4 +1,5 @@
 /**
+ * @author Walter Saldaña #19897
  * Factory para elegir la implementacion de PriorityQueue a utilizar
  */
 
@@ -18,6 +19,7 @@ public class FactoryPriorityQueue<E extends Comparable<E>> {
         else{
             //return new myTreeMap<K,V>();
         }
+
         return null;
     }
 }
