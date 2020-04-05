@@ -5,9 +5,13 @@
 
 public class Paciente implements Comparable<Paciente>{
 
+    //--------ATRIBUTOS---------------------------------------------------------------------------------------------------------------------------------
+    
     private String nombre;
     private String sintoma;
     private String codigo;
+
+    //--------CONSTRUCTORES-----------------------------------------------------------------------------------------------------------------------------
 
     /**
      * Constructor sin parametros
@@ -26,6 +30,19 @@ public class Paciente implements Comparable<Paciente>{
         this.nombre = nombre;
         this.sintoma = sintoma;
         this.codigo = codigo;
+    }
+
+    /**
+     * Constructor con parametros
+     * Crea un Paciente a partir de una sola cadena con la informacion de la ficha
+     * en el formato "nombre, sintoma, codigo"
+     * @param ficha informacion del paciente
+     */
+    public Paciente(String ficha){
+        String[] datos = ficha.split(", ");
+        this.nombre = datos[0];
+        this.sintoma = datos[1];
+        this.codigo = datos[2];
     }
 
     //--------COMPARABLE--------------------------------------------------------------------------------------------------------------------------------
