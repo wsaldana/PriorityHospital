@@ -3,8 +3,6 @@
  * Factory para elegir la implementacion de PriorityQueue a utilizar
  */
 
-import java.util.PriorityQueue;
-
 public class FactoryPriorityQueue<E extends Comparable<E>> {
 
     public iPriorityQueue<E> getPriorityQueue(String type){
@@ -13,13 +11,11 @@ public class FactoryPriorityQueue<E extends Comparable<E>> {
         }
 
         else if(type.equals("jcf")){
-            //return new PriorityQueue<E>();
+            return new JFC_PriorityQueue<E>();
         }
         
         else{
-            //return new myTreeMap<K,V>();
+            return new VectorHeap<E>();
         }
-
-        return null;
     }
 }
